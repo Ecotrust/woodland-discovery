@@ -83,7 +83,7 @@ app.init();
 // transform our coordinates
 // TODO: Make map center a configuration value
 app.map.setCenter(new OpenLayers.LonLat(-122.12, 43.98).transform(
-new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), 7);
+new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), 9);
 
 $(document).ready(function() {
   app.onResize();

@@ -70,6 +70,22 @@ app.init = function () {
 
     map.addControl(scalebar);
 
+    // geolocation
+    var geolocate = new OpenLayers.Control.Geolocate({
+        bind: false,
+        geolocationOptions: {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 7000
+        }
+    });
+    map.addControl(geolocate);
+
+    geolocate.events.register("locationupdated",geolocate,function(e) {
+      // map.panTo(e.lon,e.lat);
+      console.log(e);
+    });
+
     //enables zooming to a given extent on the map by holding down shift key while dragging the mouse
     map.zoomBox = new OpenLayers.Control.ZoomBox({});
 
@@ -737,5 +753,5 @@ app.setLayerZIndex = function(layer, index) {
 
 app.reCenterMap = function () {
     app.map.setCenter(new OpenLayers.LonLat(app.state.x, app.state.y).transform(
-        new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), 10);
+        new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), 8);
 };

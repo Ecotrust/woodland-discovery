@@ -1385,7 +1385,6 @@ function viewModel() {
 
     self.zoomLevel = ko.observable(false);
 
-
     // minimize data panel
     self.minimized = false;
     self.minimizeLayerSwitcher = function() {
@@ -1977,6 +1976,13 @@ function viewModel() {
             }
         }
     };
+
+    // geolocation button
+    self.geolocateMe = function(e) {
+        geolocate.deactivate();
+        geolocate.activate();
+    }
+
 
     /* DESIGNS */
     self.showCreateButton = ko.observable(true);
