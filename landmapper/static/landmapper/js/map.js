@@ -3,7 +3,7 @@ app.init = function () {
     //to turn basemap indicator off (hide the plus sign)
     //see email from Matt on 7/26 2:24pm with list of controls
     var map = new OpenLayers.Map(null, {
-        //allOverlays: true,
+        allOverlays: true,
         displayProjection: new OpenLayers.Projection("EPSG:4326"),
         projection: "EPSG:3857"
     });
@@ -25,6 +25,7 @@ app.init = function () {
     openStreetMap = new OpenLayers.Layer.OSM("Open Street Map", "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png", {
         sphericalMercator: true,
         isBaseLayer: true,
+        visibility: true,
         textColor: "black"
     });
     googleStreet = new OpenLayers.Layer.Google("Streets", {

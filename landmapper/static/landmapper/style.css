@@ -1,29 +1,15 @@
 h1, h2, h3, h4, h5 {
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
 }
 
-h1 {
-  font-size: 2em;
+.center {
+  position: inherit;
+  top: auto;
+  width: auto;
 }
-
-.navbar-brand {
-  font-size: 1em;
-  padding: 0;
-}
-
-  .navbar-brand h1 {
-    margin: 0;
-    line-height: 64px;
-  }
 
 .hidden {
   display: none;
-}
-
-nav {
-  background: #fff;
-  display: block;
-  overflow: hidden;
 }
 
 .panel-heading {
